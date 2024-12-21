@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckwlwmp2dw6wf"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_ivryd"]
+
+[sub_resource type="Gradient" id="Gradient_1sk3k"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.972197, 0.972565, 0.983859, 1, 0.817103, 0.908943, 0.948268, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_74t7u"]
+gradient = SubResource("Gradient_1sk3k")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_u8vjt"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hl7x"]
+font = SubResource("SystemFont_u8vjt")
+font_size = 56
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivryd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_74t7u")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Godot 4 Web Export Test"
+label_settings = SubResource("LabelSettings_8hl7x")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="square" type="ColorRect" parent="TextureRect"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
